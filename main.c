@@ -47,12 +47,11 @@ void loop() {
   brightness = analogRead(A5);
   distance = _sbeGetDistanceUsingDistanceSensor(14, 15);
 
-  darkRoom = (0 < 0);
-  tooClose = (0 < 0);
+  darkRoom = (brightness < 500);
+  tooClose = (distance < 20);
 
-  if (true && true) {
+  if (darkRoom && tooClose) {
     digitalWrite(5, LOW);
-  } else if (false) {
   } else {
     digitalWrite(5, HIGH);
   }
